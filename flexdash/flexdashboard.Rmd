@@ -1,0 +1,77 @@
+---
+title: "NYC Restaurant Inspection Data"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r}
+data("rest_inspec")
+ny_inspection = 
+  rest_inspec %>% 
+  select(boro, cuisine_description, dba, score, street, zipcode, grade) %>% 
+  filter(boro == "MANHATTAN" | boro == "BROOKLYN" | boro == "QUEENS" | boro == "BRONX" | boro == "STATEN ISLAND") %>%
+  filter(!is.na(grade))
+  
+ny_inspection$cuisine_description[ny_inspection$cuisine_description == "Latin (Cuban, Dominican, Puerto Rican, South & Central American)"] <- "Latin"
+
+ny_inspection$cuisine_description[ny_inspection$cuisine_description == "CafÃ©/Coffee/Tea"] <- "Coffee/Tea"
+
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scores of Top 10 NYC Cuisines
+
+```{r}
+top_cuisine = 
+  ny_inspection %>% 
+  count(cuisine_description) %>% 
+  top_n(10) %>% 
+  select(cuisine_description)
+
+inner_join(ny_inspection, top_cuisine,
+             by = "cuisine_description") %>% 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box",
+          colors = "Set2")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Ratings as a percent of total restaurants in each boro
+
+```{r}
+ny_inspection %>% 
+  group_by(boro, grade) %>% 
+  count(grade, sort = TRUE) %>% 
+  group_by(boro) %>% 
+  mutate(total = sum(n)) %>% 
+  mutate(percent = n/total) %>% 
+  plot_ly(x = ~boro, y = ~percent, color = ~grade, type = "bar", text = ~n)
+```
+
+### Manhattan restaurants by zipcode
+
+```{r}
+ny_inspection %>% 
+  filter(boro == "MANHATTAN") %>% 
+  group_by(grade) %>% 
+  count(zipcode, sort = TRUE) %>% 
+  plot_ly(x = ~zipcode, y = ~n, color = ~grade, type = "scatter", text = ~n)
+  
+
+```
+

@@ -1,0 +1,26 @@
+---
+title: "ja3314_hw4"
+---
+
+### I have a webpage!
+
+And I can put all kinds of stuff on it!
+
+### Add some links
+
+I like [search engines](https://www.google.com).
+
+I can link directly to the [about page](about.html).
+
+### Food
+
+<img src="images/black-tap-milkshakes.jpg" style="width:50%">
+
+Black Tap Milkshakes
+
+
+### Adding code
+
+Here is my [code](code.html).
+
+
