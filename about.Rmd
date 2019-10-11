@@ -1,57 +1,86 @@
 ---
-title: "About"
+title: "My Resume"
 ---
-
+  
+&nbsp;
 
 ## Education
 
-**North Carolina State University** - Raleigh, NC
+* **Columbia University, Mailman School of Public Health**: 2018 - 2020
+  * MS - Biostatistics
+    * Track: Theory & Methods  
+&nbsp;
 
-BS – Biological Sciences: Integrative Physiology and Neurobiology
-
-Minors: Genetics, Hindi 
-
-
-
-**Columbia University Mailman School of Public Health** - New York, NY
-
-MS - Biostatistics (ongoing)
-
-Track: Theory and Methods
-
-
-\newline \newline
+* **North Carolina State University**:  2013 - 2017
+  * BS - Biological Sciences
+    * Concentration: Integrative Physiology & Neurobiology
+  * Minors: Genetics, Hindi    
+  
+&nbsp;
 
 
 ## Work Experience
 
-**National Institute of Environmental Health Sciences (NIEHS)** - Durham, NC
+* **Biostatistics Intern,  RUSK Rehabilitation at NYU Langone Health** : October 2019 - present
+  * Collected and consolidated patient data from multiple outpatient sites
+  * Analyzed longitudinal data from patients living with traumatic brain injury as part of a larger model system database
+  * Participated in weekly team meetings
+&nbsp;
 
-May 2016 - July 2018
+* **Cell Culture Development Co-op,  Biogen** : January 2018 – June 2018 
+  * Analyzed bioreactor data to support development of more efficient drug manufacturing process
+  * Evaluated efficacy of novel cell culture technologies using statistically designed experiments
+  * Collected and managed huge amounts of data on a daily basis
+  * Prepared weekly reports for supervisors and team members
+  * Utilized creative problem-solving tools to remedy problems as they arose
+  * Prepared presentations and reports for upper level management on success and viability of project    
+&nbsp;
 
-* Planned and executed my own research project under the supervision of a postdoctoral fellow in the Developmental Neurobiology lab at the NIEHS 
-
-* Conducted a variety of both qualitative and quantitative assays aimed at examining the relationship between the hormone norepinephrine and feeding behavior 
-
-* Analyzed a wide array of data sets using a variety of statistical tests, including ANOVAs and regressions, to determine the significance of our results 
-
-* Created dozens of graphs and figures for grant proposals and publications 
-
-* Presented my research at various poster sessions and symposiums within the NIEHS
-
-**Biogen Inc.** - Durham, NC
-
-January 2018 - June 2018
-
-* Worked on chemostat cell culture process for protein production with senior chemical engineers in the cell culture development lab
-
-* Analyzed bioreactor data to support the development of cell culture manufacturing processes for recombinant protein production in the small-scale cell culture development lab 
-
-* Evaluated continuous operation technologies using statistically designed experiments 
-
-* Utilized creative problem-solving tools to remedy problems that presented themselves throughout the course of the project 
-
-* Prepared presentations and reports for upper level management on success and viability of the project 
+* **Research Intern, National Institute of Environmental Health Sciences (NIEHS)**: May 2016 – December 2017
+  * Conducted both qualitative and quantitative analyses aimed at examining relationship between hormone-release and appetite
+  * Aggregated results of many different experiments in order to analyze results
+  * Conducted literature reviews to inform decision-making at different stages of research
+  * Analyzed many different data sets using regression and multivariate analysis
+  * Created dozens of graphs and figures for publications and grant proposals
+  * Presented research at various poster sessions and symposiums within the NIEHS  
+  
+&nbsp;
 
 
-View my full resume [here](resume.pdf).
+## Other Experience
+* **Teaching Assistant, Columbia Mailman School of Public Health** 
+  * Relational Databases and SQL Programming for Research and Data Science  
+* **Peer Educator, NCSU Women's Center**
+* **Volunteer Coordinator, Sanskar Academy **   
+  
+&nbsp;
+
+
+## Skills
+* R
+* SQL
+* SAS
+* Python
+* Tableau
+* Microsoft Office – including extensive knowledge of MS Excel
+*	Database management using MS Excel, MySQL, and MS Access
+* Excellent written and oral communication
+  
+&nbsp;
+
+## Honor & Achievements
+* Daniel L. Solomon Scholarship Recipient, NCSU College of Sciences
+* Dean's List, North Carolina State University
+* Advanced Hindi-Urdu Student of the Year, NCSU Department of Foreign Languages
+
+
+## Coursework 
+* Data Science I & II
+* Biostatistical Methods I & II 
+* Introduction to Randomized Clinical Trials
+* Analysis of Longitudinal Data 
+* Probability
+* Statistical Inference
+* Statistical Methods for Causal Inference
+* Epidemiology
+
