@@ -1,5 +1,5 @@
 ---
-title: "NYC Restaurant Inspection Data"
+title: "NYC Airbnb Data Visualizations"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -16,62 +16,60 @@ library(plotly)
 ```
 
 ```{r}
-data("rest_inspec")
-ny_inspection = 
-  rest_inspec %>% 
-  select(boro, cuisine_description, dba, score, street, zipcode, grade) %>% 
-  filter(boro == "MANHATTAN" | boro == "BROOKLYN" | boro == "QUEENS" | boro == "BRONX" | boro == "STATEN ISLAND") %>%
-  filter(!is.na(grade))
-  
-ny_inspection$cuisine_description[ny_inspection$cuisine_description == "Latin (Cuban, Dominican, Puerto Rican, South & Central American)"] <- "Latin"
+set.seed(1)
 
-ny_inspection$cuisine_description[ny_inspection$cuisine_description == "CafÃ©/Coffee/Tea"] <- "Coffee/Tea"
-
+data(nyc_airbnb)
+nyc_airbnb = 
+  nyc_airbnb %>% 
+  mutate(rating = review_scores_location / 2) %>%
+  select(boro = neighbourhood_group, neighbourhood, rating, price, room_type,
+         latitude, longitude) %>%
+  filter(!is.na(rating), 
+         boro == "Manhattan",
+         room_type == "Entire home/apt",
+         price %in% 100:500)  %>% 
+  sample_n(5000)
 ```
-
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Scores of Top 10 NYC Cuisines
+### Price and Rating by Location
 
 ```{r}
-top_cuisine = 
-  ny_inspection %>% 
-  count(cuisine_description) %>% 
-  top_n(10) %>% 
-  select(cuisine_description)
-
-inner_join(ny_inspection, top_cuisine,
-             by = "cuisine_description") %>% 
-  plot_ly(y = ~score, color = ~cuisine_description, type = "box",
-          colors = "Set2")
+nyc_airbnb %>%
+  mutate(text_label = str_c("Price: $", price, '\nRating: ', rating)) %>% 
+  plot_ly(x = ~longitude, y = ~latitude, type = "scatter", mode = "markers",
+          alpha = 0.5, 
+          color = ~price,
+          text = ~text_label)
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Ratings as a percent of total restaurants in each boro
+### Prices in Neighborhoods with Most Listings
 
 ```{r}
-ny_inspection %>% 
-  group_by(boro, grade) %>% 
-  count(grade, sort = TRUE) %>% 
-  group_by(boro) %>% 
-  mutate(total = sum(n)) %>% 
-  mutate(percent = n/total) %>% 
-  plot_ly(x = ~boro, y = ~percent, color = ~grade, type = "bar", text = ~n)
+common_neighborhoods =
+  nyc_airbnb %>% 
+  count(neighbourhood, sort = TRUE) %>% 
+  top_n(8) %>% 
+  select(neighbourhood)
+
+inner_join(nyc_airbnb, common_neighborhoods,
+             by = "neighbourhood") %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box",
+          colors = "Set2")
 ```
 
-### Manhattan restaurants by zipcode
+### Number of Listings by Neighborhoods
 
 ```{r}
-ny_inspection %>% 
-  filter(boro == "MANHATTAN") %>% 
-  group_by(grade) %>% 
-  count(zipcode, sort = TRUE) %>% 
-  plot_ly(x = ~zipcode, y = ~n, color = ~grade, type = "scatter", text = ~n)
-  
-
+nyc_airbnb %>% 
+  count(neighbourhood) %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
+  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
 ```
 

@@ -18,4 +18,6 @@ knitr::opts_chunk$set(echo = TRUE)
 * Applied Skills: data aggregation & cleaning, visualization, linear models, cross-validation, multivariate analysis, writing
 
 ## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
+* Description: visualizations of data on Airbnbs in New York City
+* Applied Skills: data visualization using the tidyverse
 
