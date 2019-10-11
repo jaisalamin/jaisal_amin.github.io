@@ -1,5 +1,9 @@
 ---
 title: "Projects"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
 ---
 
 ```{r setup, include=FALSE}
@@ -21,3 +25,4 @@ knitr::opts_chunk$set(echo = TRUE)
 * Description: visualizations of data on Airbnbs in New York City
 * Applied Skills: data visualization using the tidyverse
 
+## [Homicide Data Analysis](./homicide_data.html)

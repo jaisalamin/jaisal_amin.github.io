@@ -3,6 +3,8 @@ title: "Homicide Data Analysis"
 output:
   html_document:
     code_folding: hide
+    includes:
+      after_body: footer.html
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -24,9 +26,10 @@ raw_data = read_csv(url) %>%
   mutate(victim_age = as.numeric(victim_age))
 ```
 
-*Data:* homicide data collected by The Washington Post on more than 52,000 criminal homicides over the past decade in 50 of the largest American cities. The raw data contains information on the victim including name, race, and age as well as information on the location, date, and status of the crime itself. The dataframe has information on `r nrow(raw_data)` homicides in `r nrow(distinct(raw_data, city))` different cities. More information on this dataset available [here](https://github.com/washingtonpost/data-homicides).
+**Data:** homicide data collected by The Washington Post on more than 52,000 criminal homicides over the past decade in 50 of the largest American cities. The raw data contains information on the victim including name, race, and age as well as information on the location, date, and status of the crime itself. The dataframe has information on `r nrow(raw_data)` homicides in `r nrow(distinct(raw_data, city))` different cities. More information on this dataset available [here](https://github.com/washingtonpost/data-homicides).
 
-## Visualizing homicide totals:
+## Visualizing homicide totals by city:
+Hover over individual bars for specific numbers
 
 ```{r}
 # Summarizing homicide totals
@@ -59,7 +62,9 @@ status_totals %>%
   layout(yaxis = list(title = "Total"), barmode = "stack")
 ```
 
+Here we can see that a handful of cities have signficantly more homicides than the rest. 
 
+Is the number of unsolved vs. solved affected by total number?
 
 ```{r, message=FALSE, warning=FALSE}
 city_prop = status_totals %>% 

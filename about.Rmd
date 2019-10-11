@@ -1,5 +1,9 @@
 ---
 title: "My Resume"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
 ---
   
 &nbsp;
@@ -8,16 +12,15 @@ title: "My Resume"
 
 * **Columbia University, Mailman School of Public Health**: 2018 - 2020
   * MS - Biostatistics
-    * Track: Theory & Methods  
-&nbsp;
+    * Track: Theory & Methods 
+
 
 * **North Carolina State University**:  2013 - 2017
   * BS - Biological Sciences
     * Concentration: Integrative Physiology & Neurobiology
-  * Minors: Genetics, Hindi    
+  * Minors: Genetics, Hindi 
   
-&nbsp;
-
+<br>
 
 ## Work Experience
 
@@ -25,7 +28,8 @@ title: "My Resume"
   * Collected and consolidated patient data from multiple outpatient sites
   * Analyzed longitudinal data from patients living with traumatic brain injury as part of a larger model system database
   * Participated in weekly team meetings
-&nbsp;
+  
+
 
 * **Cell Culture Development Co-op,  Biogen** : January 2018 – June 2018 
   * Analyzed bioreactor data to support development of more efficient drug manufacturing process
@@ -33,8 +37,9 @@ title: "My Resume"
   * Collected and managed huge amounts of data on a daily basis
   * Prepared weekly reports for supervisors and team members
   * Utilized creative problem-solving tools to remedy problems as they arose
-  * Prepared presentations and reports for upper level management on success and viability of project    
-&nbsp;
+  * Prepared presentations and reports for upper level management on success and viability of project  
+  
+
 
 * **Research Intern, National Institute of Environmental Health Sciences (NIEHS)**: May 2016 – December 2017
   * Conducted both qualitative and quantitative analyses aimed at examining relationship between hormone-release and appetite
@@ -44,8 +49,7 @@ title: "My Resume"
   * Created dozens of graphs and figures for publications and grant proposals
   * Presented research at various poster sessions and symposiums within the NIEHS  
   
-&nbsp;
-
+<br>
 
 ## Other Experience
 * **Teaching Assistant, Columbia Mailman School of Public Health** 
@@ -53,8 +57,7 @@ title: "My Resume"
 * **Peer Educator, NCSU Women's Center**
 * **Volunteer Coordinator, Sanskar Academy **   
   
-&nbsp;
-
+<br>
 
 ## Skills
 * R
@@ -66,13 +69,14 @@ title: "My Resume"
 *	Database management using MS Excel, MySQL, and MS Access
 * Excellent written and oral communication
   
-&nbsp;
+<br>
 
 ## Honor & Achievements
 * Daniel L. Solomon Scholarship Recipient, NCSU College of Sciences
 * Dean's List, North Carolina State University
 * Advanced Hindi-Urdu Student of the Year, NCSU Department of Foreign Languages
 
+<br>
 
 ## Coursework 
 * Data Science I & II

@@ -1,28 +1,73 @@
 ---
 title: "Welcome!"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
 ---
   
   
 &nbsp;
 
-<center>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<img class="profile" width="200" height="200" src="./profile (1).jpg" />  
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
 
-  
-&nbsp;
+.left {
+  width: 40%;
+}
 
+.right {
+  width: 60%;
+}
 
-Hello! My name is Jaisal Amin and I’m a second-year Master’s student in Biostatistics at Columbia University’s Mailman School of Public Health. Prior to coming to Columbia, I studied at North Carolina State University and worked 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column left">
+<img class="profile" width="375" height="500" src="./profile.jpg" />  
+  </div>
+  <div class="column right">
+<br><br>
+Hello! My name is Jaisal Amin and I’m a second-year Master’s student in Biostatistics at Columbia University’s Mailman School of Public Health. In addition to being a full-time student, I am also currently a teaching assistant and research intern. Prior to coming to Columbia, I studied at North Carolina State University and worked in research roles.
 
 I am interested in using data and sound statistical methods to solve real-world problems. Outside the classroom, I enjoy perfecting my piano-playing skills and spending quality time with friends and family.
 
-If you're interested, you can view my resume [here](about.html), as well as some projects I have worked on [here](./flexdash/flexdashboard.html).  
+I keep this site updated with my latest projects and information, please feel free to check out my work or contact me with any inquiries!  
   
-  
-&nbsp;
+  </div>
+</div>
 
+</body>
+</html>
 
-Thanks for visiting!
+<br><br><br><br><br><br><br><br><br><br>
 
+<center>
+
+### Check out some of my projects [here](projects.html).
+
+### You can learn more about me [here](about.html).
+<br><br>
+
+## Thanks for visiting!
 </center>
