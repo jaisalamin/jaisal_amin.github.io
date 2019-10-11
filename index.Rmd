@@ -1,11 +1,28 @@
 ---
-title: "Jaisal Amin"
+title: "Welcome!"
 ---
+  
+  
+&nbsp;
 
-### ja3314_hw4
+<center>
 
-Welcome to my personal website. I have included some information about my academic and professional acheivements [here](about.html), as well as some graphs I have created [here](./flexdash/flexdashboard.html).
+<img class="profile" width="200" height="200" src="./profile (1).jpg" />  
+
+  
+&nbsp;
+
+
+Hello! My name is Jaisal Amin and I’m a second-year Master’s student in Biostatistics at Columbia University’s Mailman School of Public Health. Prior to coming to Columbia, I studied at North Carolina State University and worked 
+
+I am interested in using data and sound statistical methods to solve real-world problems. Outside the classroom, I enjoy perfecting my piano-playing skills and spending quality time with friends and family.
+
+If you're interested, you can view my resume [here](about.html), as well as some projects I have worked on [here](./flexdash/flexdashboard.html).  
+  
+  
+&nbsp;
+
 
 Thanks for visiting!
 
-
+</center>

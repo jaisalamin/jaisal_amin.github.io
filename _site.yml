@@ -1,14 +1,14 @@
-name: "hw4_ja3314"
+name: "jaisal_amin"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Jaisal Amin"
   right:
-    - text: "NYC Restaurant Inspections"
-      href: ./flexdash/flexdashboard.html
     - text: "About"
       href: about.html
+    - text: "Projects"
+      href: projects.html
     - icon: fa-envelope fa-lg
-      href: mailto:<ja3314@cumc.columbia.edu>
+      href: mailto:<jaisal.amin@gmail.com>
     - icon: fa-github fa-lg
       href: http://github.com/jaisalamin/
    

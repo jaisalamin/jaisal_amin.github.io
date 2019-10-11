@@ -1,0 +1,21 @@
+---
+title: "Projects"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<center>
+
+![Graphic by Sandra Durcevic on Datapine](./data_banner.jpg)
+
+</center>  
+
+&nbsp;
+
+## [Exploring the Relationship between Health and Healthcare in America](https://cj2493.github.io/p8105_fp_mjcr/)
+* Description: exploring differences in health practices and outcomes by analyzing relevant associations
+* Applied Skills: data aggregation & cleaning, visualization, linear models, cross-validation, multivariate analysis, writing
+
+## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
+
