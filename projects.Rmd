@@ -35,3 +35,4 @@ knitr::opts_chunk$set(echo = TRUE)
 * Model selection using machine-learning methods
 * Data analysis using SAS & Python
 * Visualizations created in Tableau
+* Shiny app 

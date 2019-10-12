@@ -9,8 +9,6 @@ navbar:
       href: projects.html
     - icon: fa-envelope fa-lg
       href: mailto:<jaisal.amin@gmail.com>
-    - icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/jaisal-amin-20bb6b11a/
     - icon: fa-github fa-lg
       href: http://github.com/jaisalamin/
    
