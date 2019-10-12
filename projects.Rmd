@@ -21,8 +21,17 @@ knitr::opts_chunk$set(echo = TRUE)
 * Description: exploring differences in health practices and outcomes by analyzing relevant associations
 * Applied Skills: data aggregation & cleaning, visualization, linear models, cross-validation, multivariate analysis, writing
 
+## [Homicide Data Analysis](./homicide_data.html)
+* Description: exploring dataset on homicides in 50 major US cities
+* Applied Skills: data cleaning, visualization, linear models
+
 ## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
 * Description: visualizations of data on Airbnbs in New York City
-* Applied Skills: data visualization using the tidyverse
+* Applied Skills: data visualization and EDA using the tidyverse, flexdashboard
 
-## [Homicide Data Analysis](./homicide_data.html)
+***
+
+### Coming Soon:
+* Model selection using machine-learning methods
+* Data analysis using SAS & Python
+* Visualizations created in Tableau

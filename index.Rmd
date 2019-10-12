@@ -48,7 +48,7 @@ output:
   </div>
   <div class="column right">
 <br><br>
-Hello! My name is Jaisal Amin and I’m a second-year Master’s student in Biostatistics at Columbia University’s Mailman School of Public Health. In addition to being a full-time student, I am also currently a teaching assistant and research intern. Prior to coming to Columbia, I studied at North Carolina State University and worked in research roles.
+Hello! My name is Jaisal Amin and I’m a second-year Master’s student in Biostatistics at Columbia University. In addition to being a full-time student, I am also currently a teaching assistant and research intern at NYU Langone Health. Prior to coming to Columbia, I studied at North Carolina State University and worked in various research roles.
 
 I am interested in using data and sound statistical methods to solve real-world problems. Outside the classroom, I enjoy perfecting my piano-playing skills and spending quality time with friends and family.
 

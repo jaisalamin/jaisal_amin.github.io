@@ -8,14 +8,14 @@
 
 &nbsp;
 <hr />
-<p style="text-align: center;">A site by <a href=about.html>Jaisal Amin</a></p>
-<p style="text-align: center;"><em>jaisal.amin@gmail.com</em></p>
+<p style = "text-align: center;">A site by <a href = index.html>Jaisal Amin</a></p>
+<p style = "text-align: center;"><em>jaisal.amin@gmail.com</em></p>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <p style="text-align: center;">
-    <a href="https://www.linkedin.com/in/jaisal-amin-20bb6b11a/" class="fa fa-linkedin"></a>
-    <a href="https://github.com/jaisalamin" class="fa fa-github"></a>
+    <a href = "https://www.linkedin.com/in/jaisal-amin-20bb6b11a/" class = "fa fa-linkedin"></a>
+    <a href = "https://github.com/jaisalamin" class="fa fa-github"></a>
 </p>
 
 &nbsp;
