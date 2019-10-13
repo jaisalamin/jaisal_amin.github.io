@@ -110,7 +110,7 @@ city_props %>%
 ```
 
 From the graph above, we can see that most cities have an estimate between 0.3-0.6, although confidence intervals vary quite a bit. Notably, the 6 cities with the most homicides (listed in the table above) all have smaller confidence intervals compared to the rest so the larger confidence intervals may be due to smaller sample sizes.
-Given that the city of Chicago has not only the most homicides but also the highest proportion of unsolved homicides, we will explore how other variables provided in this dataset -- namely race -- affect a victim's odds of having their case resolved.
+Given that the city of Chicago has not only the most homicides but also the highest proportion of unsolved homicides, we will explore how other variables provided in this dataset -- namely race -- affect a victim's odds of having their case resolved. Fitting a logistic regression gives us the following results:
 
 
 ```{r, message = FALSE, warning = FALSE}
@@ -140,10 +140,10 @@ fit_logistic =
 
 fit_logistic %>% 
   broom::tidy() %>% 
-  mutate(OR = exp(estimate),
-         OR_lower_bound = exp(estimate - 1.96*std.error),
-         OR_upper_bound = exp(estimate + 1.96*std.error)) %>%
-  select(term, starts_with("OR")) %>% 
+  mutate("Odds Ratio" = exp(estimate),
+         "OR Lower Bound" = exp(estimate - 1.96*std.error),
+         "OR Upper Bound" = exp(estimate + 1.96*std.error)) %>%
+  select(term, starts_with("O")) %>% 
   filter(term != "victim_sexUnknown") %>% 
   kable(digits = 3) %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
