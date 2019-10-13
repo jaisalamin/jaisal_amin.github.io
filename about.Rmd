@@ -1,5 +1,5 @@
 ---
-title: "My Resume"
+title: "My Curriculum Vitae"
 output:
   html_document:
     includes:
@@ -27,7 +27,7 @@ output:
 * **Biostatistics Intern,  RUSK Rehabilitation at NYU Langone Health** : October 2019 - present
   * Collected and consolidated patient data from multiple outpatient sites
   * Analyzed longitudinal data from patients living with traumatic brain injury as part of a larger model system database
-  * Participated in weekly team meetings
+  * Participated in weekly team meetings to keep the team updated on my progress and troubleshoot any issues with the project
   
 
 
