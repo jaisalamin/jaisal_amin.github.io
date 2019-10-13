@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## [Homicide Data Analysis](./homicide_data.html)
 * Description: exploring dataset on homicides in 50 major US cities
-* Applied Skills: data cleaning, visualization, logistic regression, R-coding style (code chunks included)
+* Applied Skills: data import, cleaning and manipulation, visualization, logistic regression, R-coding style (code chunks included)
 
 ## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
 * Description: visualizations of data on Airbnbs in New York City
