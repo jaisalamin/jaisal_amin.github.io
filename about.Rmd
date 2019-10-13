@@ -42,7 +42,7 @@ output:
 
 
 * **Research Intern, National Institute of Environmental Health Sciences (NIEHS)**: May 2016 – December 2017
-  * Conducted both qualitative and quantitative analyses aimed at examining relationship between hormone-release and appetite
+  * Conducted both qualitative and quantitative analyses aimed at examining relationship between norepinephrine and feeding behavior in mice
   * Aggregated results of many different experiments in order to analyze results
   * Conducted literature reviews to inform decision-making at different stages of research
   * Analyzed many different data sets using regression and multivariate analysis
