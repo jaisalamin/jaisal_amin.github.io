@@ -64,7 +64,7 @@ output:
 <br>
 
 ## Other Experience
-* **Teaching Assistant, Columbia Mailman School of Public Health** 
+* **Teaching Assistant, Columbia University** 
   * Relational Databases and SQL Programming for Research and Data Science  
 * **Peer Educator, NCSU Women's Center**
 * **Volunteer Coordinator, Sanskar Academy **   
