@@ -1,0 +1,42 @@
+---
+title: "Projects"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<center>
+
+![Graphic by Sandra Durcevic on Datapine](./data_banner.jpg)
+
+</center>  
+
+&nbsp;
+
+## [Exploring the Relationship between Health and Healthcare in America](https://cj2493.github.io/p8105_fp_mjcr/)
+* Description: exploring differences in health practices and outcomes by analyzing relevant associations
+* Applied Skills: data aggregation & cleaning, visualization, linear models, cross-validation, multivariate analysis, writing
+
+## [Homicide Data Analysis](./homicide_data.html)
+* Description: exploring dataset on homicides in 50 major US cities
+* Applied Skills: data import, cleaning and manipulation, visualization, logistic regression, R-coding style (code chunks included)
+
+## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
+* Description: visualizations of Airbnb rental unit data in New York City
+* Applied Skills: data visualization and EDA using the tidyverse, flexdashboard
+
+## [SAS Programming Sample](./sas_code.html)
+* Description: SAS code written to analyze misc. health data; code only, outputs not included
+* Applied Skills: data import and cleaning, arrays, macros, visualizations, hypothesis testing, modeling
+
+***
+
+### Coming Soon:
+* Model selection using machine-learning methods
+* Data analysis using Python
+* Tableau visualizations
+* Shiny app 

@@ -1,0 +1,75 @@
+---
+title: "Welcome!"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
+---
+  
+  
+&nbsp;
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px;
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column left">
+<img class="profile" width="330" height="440" src="./final.jpg" />  
+  </div>
+  <div class="column right">
+<br><br><br>
+Hello! My name is Jaisal Amin and I’m a recent graduate of Columbia University's Mailman School of Public Health. I am currently interning at NYU Langone Health, gaining valuable experience, while still working on some data-driven projects in my spare time. Prior to studying at Columbia, I studied at North Carolina State University and worked in various research roles.
+
+I am interested in using data and sound statistical methods to solve real-world problems. Outside the classroom, I enjoy perfecting my piano-playing skills and spending quality time with friends and family.
+
+I keep this site updated with my latest projects and information, please feel free to check out my work or contact me with any inquiries!  
+  
+  </div>
+</div>
+
+</body>
+</html>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+&nbsp;
+
+<center>
+
+### Check out some of my projects [here](projects.html).
+
+### You can learn more about me [here](about.html).
+<br><br>
+
+## Thanks for visiting!
+</center>

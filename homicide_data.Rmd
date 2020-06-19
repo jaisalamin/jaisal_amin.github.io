@@ -1,0 +1,187 @@
+---
+title: "Homicide Data Analysis"
+output:
+  html_document:
+    code_folding: hide
+    includes:
+      after_body: footer.html
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(modelr)
+library(plotly)
+library(knitr)
+library(kableExtra)
+```
+
+
+```{r, message = FALSE, warning = FALSE}
+# Reading in homicide data
+
+url = "https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv"
+raw_data = read_csv(url) %>% 
+  mutate(city_state = str_c(city, ",", " ", state)) %>% 
+  mutate(victim_age = as.numeric(victim_age))
+```
+
+**Data:** homicide data collected by The Washington Post on more than 52,000 criminal homicides over the past decade in 50 of the largest American cities. The raw data contains information on the victim including name, race, and age as well as information on the location, date, and status of the crime itself. The dataframe has information on `r nrow(raw_data)` homicides in `r nrow(distinct(raw_data, city))` different cities. More information on this dataset available [here](https://github.com/washingtonpost/data-homicides).
+
+## Visualizing homicide totals by city:
+In alphabetical order, hover over individual bars for specific numbers
+
+```{r}
+# Summarizing homicide totals
+
+status_totals = 
+  raw_data %>% 
+  group_by(city_state, disposition) %>% 
+  count(disposition) %>% 
+  spread(key = disposition, value = n) %>% 
+  janitor::clean_names() %>% 
+  mutate_all(funs(replace(., is.na(.), 0))) %>% 
+  mutate(unsolved = closed_without_arrest + open_no_arrest) %>% 
+  select(-closed_without_arrest, -open_no_arrest) %>% 
+  rename(solved = closed_by_arrest) %>% 
+  mutate(total = solved + unsolved) %>%  
+  filter(city_state != "Tulsa, AL") ## Filtering out "Tulsa, AL" because that is not a real place
+
+# Stacked bar chart of solved/unsolved homicides by city
+
+status_totals %>% 
+  rename(City = city_state) %>% 
+  plot_ly(x = ~City, y = ~solved, type = "bar", name = "Solved", hoverinfo = "text",
+          text = ~paste("</br> City:", City,
+                        "</br> Unsolved:", unsolved,
+                        "</br> Solved:", solved,
+                        "</br> Total:", total)) %>% 
+  add_trace(y = ~unsolved, name = "Unsolved") %>% 
+  layout(yaxis = list(title = "Total"), barmode = "stack")
+```
+
+From this chart we can see that a majority of these cities have fewer than 1000 homicides in this dataset. However there are a handful of cities that standout, so next we will look at the proportion of solved vs. unsolved cases in cities with more than 2000 homicides recorded. 
+
+
+```{r, message=FALSE, warning=FALSE}
+# Calculating proportion of solved/unsolved homicides for cities with more than 2000 total homicides:
+
+city_prop = status_totals %>% 
+  filter(total > 2000) %>% 
+  mutate(prop_solved = solved/total) %>% 
+  mutate(prop_unsolved = unsolved/total) %>% 
+  select(prop_solved, prop_unsolved, total) %>% 
+  rename(City = city_state, "Proportion Solved" = prop_solved, "Proportion Unsolved" = prop_unsolved) %>% 
+  arrange(desc(total))
+
+city_prop %>% 
+  kable(digits = 2) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Looking at cities with more than 2000 homicides, we can see there is some variability in the proportion of solved vs. unsolved homicides. While some cities are pretty close to an even 50-50 split between solved and unsolved homicides, others are far from it. In order to explore this further, we will look at the proportion of unsolved homicides along with confidence intervals for all 50 cities.
+
+```{r, message = FALSE, warning = FALSE}
+# Calculating proportion of unsolved homicides for each city:
+
+city_props = 
+  status_totals %>% 
+  mutate(prop = map2(unsolved, total, prop.test)) %>% 
+  mutate(prop = map(prop, broom::tidy)) %>% 
+  unnest() %>% 
+  select(estimate, conf.low, conf.high) 
+
+# Plotting estimates with CIs for each city:
+
+city_props %>% 
+  ungroup %>% 
+  mutate(city_state = fct_reorder(city_state, estimate)) %>% 
+  ggplot(aes(x = city_state, y = estimate)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high)) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(
+    title = "Estimates of Unsolved Homicide Proportions with 95% CIs",
+    x = "City",
+    y = "Prop. Unsolved"
+  )
+
+```
+
+From the graph above, we can see that most cities have an estimate between 0.3-0.6, although confidence intervals vary quite a bit. Notably, the 6 cities with the most homicides (listed in the table above) all have smaller confidence intervals compared to the rest so the larger confidence intervals may be due to smaller sample sizes.
+Given that the city of Chicago has not only the most homicides but also the highest proportion of unsolved homicides, we will explore how other variables provided in this dataset -- namely race -- affect a victim's odds of having their case resolved. Fitting a logistic regression gives us the following results:
+
+
+```{r, message = FALSE, warning = FALSE}
+# Re-reading in data and formatting for current analysis:
+
+url = "https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv"
+raw_data = read_csv(url) %>% 
+  mutate(city_state = str_c(city, ",", " ", state)) %>% 
+  mutate(resolved = as.numeric(disposition == "Closed by arrest"),
+         victim_age = as.numeric(victim_age),
+         victim_race = ifelse(victim_race == "White", c("White"), c("Non-white")),
+         victim_race = fct_relevel(victim_race, "White")) %>% 
+  filter(!city_state %in% c("Tulsa, AL", "Dallas, TX", "Phoenix, AZ", "Kansas City, MO")) #Omitting cities that don't report victim race
+
+# Fitting logistic regression for Chicago:
+
+chicago_df = 
+  raw_data %>% 
+  filter(city_state == "Chicago, IL") %>% 
+  select(resolved, victim_age, victim_race, victim_sex)
+
+fit_logistic = 
+  chicago_df %>% 
+  glm(resolved ~ victim_age + victim_race + victim_sex, data = ., family = binomial())
+
+# Making table with relevant info:
+
+fit_logistic %>% 
+  broom::tidy() %>% 
+  mutate("Odds Ratio" = exp(estimate),
+         "OR Lower Bound" = exp(estimate - 1.96*std.error),
+         "OR Upper Bound" = exp(estimate + 1.96*std.error)) %>%
+  select(term, starts_with("O")) %>% 
+  filter(term != "victim_sexUnknown") %>% 
+  kable(digits = 3) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+Based on the values obtained, the odds of a homicide of a non-white victim being solved in Chicago are 0.416 times the odds of a homicide of a white victim being resolved, all else being equal. We are 95% confidence that the true odds ratio falls between 0.348 and 0.497. Given this data, we can conclude that the odds of a homicide involving a non-white victim is solved is markedly less than the odds of a white victim's homicide being solved. Let's explore this for all cities in this dataset. 
+
+
+```{r}
+# Running regressions for all cities in dataset:
+city_glm = 
+  raw_data %>% 
+  group_by(city_state) %>% 
+  nest() %>% 
+  mutate(models = map(data, ~glm(resolved ~ victim_age + victim_race + victim_sex, data = ., family = binomial())),
+         models = map(models, broom::tidy)) %>% 
+  select(-data) %>%
+  unnest() %>% 
+  mutate(OR = exp(estimate),
+         OR_upper_bound = exp(estimate + 1.96*std.error),
+         OR_lower_bound = exp(estimate - 1.96*std.error)) %>% 
+  select(city_state, term, starts_with("OR")) %>% 
+  filter(term == "victim_raceNon-white") 
+
+# Plotting odds ratios and confidence intervals:
+city_glm %>%
+  mutate(city_state = fct_reorder(city_state, OR)) %>%
+  ggplot(aes(x = city_state, y = OR)) +
+    geom_point() +
+    coord_flip() +
+    geom_errorbar(aes(ymin = OR_lower_bound, ymax = OR_upper_bound)) +
+    labs(x = "City", y = "Odds Ratio", title = "Odds Ratios of Resolving Homicides in Non-white vs. White Victims")
+```
+
+From looking at this plot, we see that the odds ratios of homicide resolution in non-white victims is lower than 1 for most cities, meaning that white victims are more likely to have their homicides resolved. Many confidence intervals include 1 but most range below 1.
+<br>
+
+**Future directions for analysis:**
+
+* pulling population data, evaluate homicides per capita in the same way
+* evaluate the relationship between propotion of solved/unsolved cases in relation to the number of law enforcement officials in each city
