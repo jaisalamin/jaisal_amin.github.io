@@ -1,0 +1,14 @@
+---
+title: "SAS Programming Sample"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![](./sas_code.jpg)
+![](./sas_code2.jpg)
