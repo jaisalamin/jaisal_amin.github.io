@@ -24,7 +24,12 @@ output:
 
 ## Work Experience
 
-* **Biostatistics Intern,  RUSK Rehabilitation at NYU Langone Health** : October 2019 - present
+* **Biostatistics Intern,  RUSK Rehabilitation at NYU Langone Health** : February 2020 - present
+  * Utilized statistical approaches such as logistic regression analysis, survival analysis, and model building techniques to analyze data collected from patients living with traumatic brain injury (TBI)
+  * Wrote program code to analyze and model associations between demographic traits and TBI using R and SAS
+  * Prepared statistical data for inclusion in reports to data monitoring committees and IRBs
+  * Cleaned, transformed, consolidated, and manipulated large datasets using R, SPSS, and SAS
+  * Supported projects to create resources for patients and healthcare providers using qualitative data analysis
   * Collected and consolidated patient data from multiple outpatient sites
   * Analyzed longitudinal data from patients living with traumatic brain injury as part of a larger model system database
   * Participated in weekly team meetings to keep the team updated on my progress and troubleshoot any issues with the project
@@ -34,20 +39,27 @@ output:
 * **Cell Culture Development Co-op,  Biogen** : January 2018 – June 2018 
   * Analyzed bioreactor data to support development of more efficient drug manufacturing process
   * Evaluated efficacy of novel cell culture technologies using statistically designed experiments
+  * Designed research studies in collaboration with chemical engineers, life scientists, and biostatisticians
+  * Determined project plans, timelines, and technical objectives for biological research studies
   * Collected and managed huge amounts of data on a daily basis
   * Prepared weekly reports for supervisors and team members
   * Utilized creative problem-solving tools to remedy problems as they arose
-  * Prepared presentations and reports for upper level management on success and viability of project  
+  * Worked both independently and with a team to meet deadlines and solve problems
+  * Prepared reports and presentations for upper-level management on success and viability of the project
+
   
 
 
 * **Research Intern, National Institute of Environmental Health Sciences (NIEHS)**: May 2016 – December 2017
-  * Conducted both qualitative and quantitative analyses aimed at examining relationship between norepinephrine and feeding behavior in mice
-  * Aggregated results of many different experiments in order to analyze results
+  * Conducted a variety of both qualitative and quantitative assays aimed at examining the relationship between hormone-release and appetite
+  * Developed methods to statistically quantify behavioral cues and changes observed in animal subjects throughout the course of the experiment
+  * Aggregated results of multiple experiments in order to analyze results
   * Conducted literature reviews to inform decision-making at different stages of research
   * Analyzed many different data sets using regression and multivariate analysis
-  * Created dozens of graphs and figures for publications and grant proposals
-  * Presented research at various poster sessions and symposiums within the NIEHS  
+  * Created and managed databases for various ongoing studies
+  * Prepared dozens of graphs, tables and figures for symposiums, publications, and grant proposals
+  * Presented research at various poster sessions and symposiums within the NIEHS 
+
   
 <br>
 
@@ -63,11 +75,16 @@ output:
 * R
 * SQL
 * SAS
-* Python
-* Tableau
-* Microsoft Office – including extensive knowledge of MS Excel
-*	Database management using MS Excel, MySQL, and MS Access
-* Excellent written and oral communication
+* Advanced MS Excel
+* Data visualization
+*	Database management using MS Excel, mySQL, and MS Access
+* Study design 
+* Sample size calculation
+* Statistical inference and modeling
+* Knowledge of advanced statistical methods 
+* Excellent organizational & time management skills
+* Strong written & verbal communication
+
   
 <br>
 
