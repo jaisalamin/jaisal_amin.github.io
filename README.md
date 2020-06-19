@@ -1,1 +1,1 @@
-# You can view my personal page [here](https://jaisalamin.github.io/jaisal_amin.github.io/)
+# You can view my personal page [here](https://jaisalamin.github.io/)
