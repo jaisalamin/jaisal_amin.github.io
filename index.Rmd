@@ -44,10 +44,10 @@ output:
 
 <div class="row">
   <div class="column left">
-<img class="profile" width="375" height="500" src="./final.jpg" />  
+<img class="profile" width="330" height="440" src="./final.jpg" />  
   </div>
   <div class="column right">
-<br><br>
+<br><br><br>
 Hello! My name is Jaisal Amin and I’m a recent graduate of Columbia University's Mailman School of Public Health. I am currently interning at NYU Langone Health, gaining valuable experience, while still working on some data-driven projects in my spare time. Prior to studying at Columbia, I studied at North Carolina State University and worked in various research roles.
 
 I am interested in using data and sound statistical methods to solve real-world problems. Outside the classroom, I enjoy perfecting my piano-playing skills and spending quality time with friends and family.
@@ -61,6 +61,8 @@ I keep this site updated with my latest projects and information, please feel fr
 </html>
 
 <br><br><br><br><br><br><br><br><br><br>
+
+&nbsp;
 
 <center>
 
