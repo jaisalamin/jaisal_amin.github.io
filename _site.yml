@@ -10,7 +10,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<jaisal.amin@gmail.com>
     - icon: fa-github fa-lg
-      href: http://github.com/jaisalamin/
+      href: https://github.com/jaisalamin/jaisalamin.github.io
    
 output:
   html_document:
