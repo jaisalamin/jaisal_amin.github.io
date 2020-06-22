@@ -25,6 +25,10 @@ knitr::opts_chunk$set(echo = TRUE)
 * Description: exploring dataset on homicides in 50 major US cities
 * Applied Skills: data import, cleaning and manipulation, visualization, logistic regression, R-coding style (code chunks included)
 
+## [Global Suicide Rates Model Selection](./model_selection.html)
+* Description: building and selecting models using machine learning methods
+* Applied Skills: exploratory data analysis (EDA), cross-validation, model building and selection, machine learning basics
+
 ## [NYC Airbnb Listings Visualizations](./flexdash/flexdashboard.html)
 * Description: visualizations of Airbnb rental unit data in New York City
 * Applied Skills: data visualization and EDA using the tidyverse, flexdashboard
@@ -36,7 +40,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ***
 
 ### Coming Soon:
-* Model selection using machine-learning methods
 * Data analysis using Python
 * Tableau visualizations
 * Shiny app 
+* ...and more!
