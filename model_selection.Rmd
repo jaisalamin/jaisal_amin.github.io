@@ -87,7 +87,7 @@ The most notable associations we observed during our exploratory analysis were b
 
 ## Model Fitting and Selection
 
-The different models fitted to the data were: ridge regression, lasso, PCR, GAM, KNN, MARS, and regression trees, with random forests and boosting.
+The different models fitted to the data were: ridge regression, lasso, PCR, GAM, KNN, MARS, and regression trees with random forests and boosting.
 
 * A linear model was fitted first as a point of reference. This data does not meet the required normality assumptions and as such we expect large errors from this model.
 
